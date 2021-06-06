@@ -1,7 +1,6 @@
 
 //ADD YOUR FIREBASE LINKS
 
-
 var firebaseConfig = {
   apiKey: "AIzaSyCx-nrejG0LTGWaPzN0u5zW8MELORjkNJA",
   authDomain: "social-app-25c95.firebaseapp.com",
@@ -31,7 +30,8 @@ function addRoom()
     window.location = "kwitter_page.html";
 }
 
-function getData() {  firebase.database().ref("/").on('value', function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.forEach(function(childSnapshot) { childKey  = childSnapshot.key;
+function getData() {
+    firebase.database().ref("/").on('value', function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.forEach(function(childSnapshot) { childKey  = childSnapshot.key;
        Room_names = childKey;
        console.log("Room Name - " + Room_names);
       row = "<div class='room_name' id="+Room_names+" onclick='redirectToRoomName(this.id)' >#"+ Room_names +"</div><hr>";
